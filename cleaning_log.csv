@@ -1,0 +1,9 @@
+Step,Action/check,Reason,Rows before,Rows after,Rows removed,Details
+1,Validate expected columns,Prevent silent schema mismatch,303,303,0,14 named attributes present
+2,Inspect missing values,Identify incomplete fields without fabricating corrections,303,303,0,6 missing cells
+3,Normalize numeric data types,Ensure numeric comparisons and missing markers are handled,303,303,0,Non-numeric entries become NaN
+4,Check and remove exact duplicate records,Avoid double-counting identical rows,303,303,0,0 removed
+5,Validate known coding and plausible ranges,Catch inconsistent codes and implausible measurements,303,303,0,num 0–4; age 0–120; thalach 50–250
+6,Derive binary group from num,Enable clear two-group comparison while retaining original outcome,303,303,0,0 versus 1–4
+7,Restrict primary comparison to observed heart rate and outcome,Avoid discarding records for unrelated missing ca/thal,303,303,0,No imputation of the primary outcome
+8,Screen heart-rate outliers with IQR,Flag unusual but potentially valid clinical observations,303,303,0,1 flagged; none automatically removed
